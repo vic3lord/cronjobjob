@@ -9,4 +9,4 @@ flags:
   - name: "dry-run"
     shorthand: "d"
     desc: "Validate manifest without publishing"
-    defValue: "true"
+    defValue: "false"
