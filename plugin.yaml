@@ -1,0 +1,12 @@
+name: cronjobjob
+shortDesc: "Create a job from a CronJon spec"
+longDesc: ""
+command: ./cronjobjob.rb
+flags:
+  - name: "file"
+    shorthand: "f"
+    desc: "[ -f ./cronjob-manifest.yaml  ] -- Required"
+  - name: "dry-run"
+    shorthand: "d"
+    desc: "Validate manifest without publishing"
+    defValue: "true"
