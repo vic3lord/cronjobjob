@@ -2,6 +2,9 @@
 
 Generate a Kubernetes Job to execute now! from a Kubernetes CronJob spec
 
+> Deprecated: `kubectl` supports executing a job from `cronjob` spec.
+> `kubectl create job --from=cronjob/etl-example`
+
 ## Install
 
 ```sh
