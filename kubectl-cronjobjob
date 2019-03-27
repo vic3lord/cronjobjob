@@ -2,7 +2,7 @@
 
 require 'yaml'
 
-file = "#{ENV['PWD']}/#{ENV['KUBECTL_PLUGINS_LOCAL_FLAG_FILE']}"
+file = ARGV[0]
 puts file
 manifest = YAML.load_file(file)
 job_template = manifest['spec']['jobTemplate']
@@ -12,7 +12,7 @@ job_template['metadata'] = manifest['metadata']
 job_template['metadata']['name'] = "#{job_template['metadata']['name']}-#{Time.now.to_i}"
 File.write('/tmp/cronjobjob.yaml', job_template.to_yaml)
 
-if ENV['KUBECTL_PLUGINS_LOCAL_FLAG_DRY_RUN'] == 'true'
+if ARGV[2] == '-d' || ARGV[2] == '--dry-run'
   system('kubectl apply --dry-run -f /tmp/cronjobjob.yaml')
 else
   system('kubectl apply -f /tmp/cronjobjob.yaml')

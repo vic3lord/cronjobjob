@@ -8,16 +8,15 @@ Generate a Kubernetes Job to execute now! from a Kubernetes CronJob spec
 ## Install
 
 ```sh
-# Get the code
-git clone https://github.com/vic3lord/cronjobjob ~/.kube/plugins/cronjobjob
+mv kubectl-cronjobjob /usr/local/bin/kubectl-cronjobjob # or any other place in $PATH
 
 # Verify installation
-kubectl plugin cronjobjob --help
+kubectl cronjobjob <filename> <--dry-run>
 ```
 
 ## Example
 
 ```sh
-kubectl plugin cronjobjob -f cronjob.yaml
+kubectl cronjobjob cronjob.yaml
 ```
 
